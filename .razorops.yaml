@@ -5,14 +5,9 @@ global:
     os_image: ubuntu  # Use a Linux VM environment
 
 tasks:
-  say-hello:  # Name of the task updated
+  say-hello:  # Name of the task
     steps:
-      - step_type: run
-        name: print-hello-world
-        run: echo "Hello World from RazorOps!"
-      - step_type: run
-        name: show-directory-structure
-        run: ls -la
-      - step_type: run
-        name: show-system-info
-        run: uname -a
+    - checkout
+    - run: echo "Hello World from RazorOps!"
+    - run: ls -la
+    - run: uname -a
