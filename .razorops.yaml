@@ -1,15 +1,24 @@
 version: v2
 
-global:
-  runner:
-    os_image: ubuntu  # Use a Linux VM environment
+pipeline:
+  build:
+    when:
+      branch:
+        include:
+          - main
+    tasks:
+      - task: say-hello
 
 tasks:
-  say-hello:  # Name of the task
+  say-hello:
+    runner:
+      os_image: ubuntu
     steps:
       - name: Print Hello World
         run: echo "Hello World from RazorOps!"
+
       - name: Show Directory Structure
         run: ls -la
+
       - name: Show System Info
         run: uname -a
