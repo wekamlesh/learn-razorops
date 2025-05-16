@@ -5,7 +5,7 @@ global:
     os_image: ubuntu  # Use a Linux VM environment
 
 tasks:
-  say-hello:  # Name of the task
+  say-hello:  # Name of the task updated
     steps:
       - step_type: run
         name: print-hello-world
